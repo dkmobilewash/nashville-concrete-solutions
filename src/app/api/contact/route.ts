@@ -28,6 +28,21 @@ export async function POST(request: Request) {
   const body = (await request.json()) as ContactPayload;
   const { name, phone, email, service, city, message } = body;
 
+    // Forward to Zapier webhook for lead tracking
+    try {
+          await fetch('https://hooks.zapier.com/hooks/catch/20117350/44fmixd/', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({
+                            ...body,
+                            website: 'Nashville Concrete Solutions',
+                            submittedAt: new Date().toISOString(),
+                  }),
+          });
+    } catch (zapierError) {
+          console.error('[Zapier Webhook Error]', zapierError);
+    }
+
   if (!name || !phone) {
     return NextResponse.json({ error: "Name and phone are required" }, { status: 400 });
   }
