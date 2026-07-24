@@ -10,14 +10,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Palette derived from the Nashville Concrete Solutions logo
+        // (public/nashville-concrete-solutions.png): navy + charcoal skyline
+        // + concrete grays, no orange. "accent" is a brighter tint of the
+        // logo's navy, introduced only because a pure navy-on-navy site has
+        // no way to make CTAs/links pop — everything else is sampled
+        // directly from the logo artwork.
         brand: {
-          charcoal: "#1C1F24",
-          "charcoal-light": "#2A2E35",
-          orange: "#EA580C",
-          "orange-dark": "#C2410C",
-          gray: "#4B5563",
-          "gray-light": "#F3F4F6",
-          "gray-mid": "#D1D5DB",
+          navy: "#012451",
+          "navy-light": "#395477",
+          accent: "#2268C3",
+          "accent-dark": "#1C539C",
+          gray: "#585858",
+          "gray-light": "#F2F4F7",
+          "gray-mid": "#C3C9D1",
           white: "#FFFFFF",
         },
       },

@@ -53,9 +53,17 @@ Also review before publishing:
 - **Testimonials** (`src/components/sections/TestimonialsSection.tsx`) contain
   clearly-labeled placeholder quotes — replace with real, attributable
   customer reviews.
-- **Brand colors** (charcoal/orange in `tailwind.config.ts`) were not
-  specified in the brief and were chosen as sensible defaults for a concrete
-  contractor site — confirm or adjust.
+- **Brand colors** (`tailwind.config.ts`) are sampled directly from
+  `public/nashville-concrete-solutions.png`: navy `#012451` (primary/dark),
+  charcoal-adjacent grays, and a brighter blue `#2268C3` introduced as the
+  `accent` token since the logo itself has no CTA-worthy color — everything
+  else is pulled straight from the artwork.
+- **Logo** (`public/nashville-concrete-solutions.png`, cropped to
+  `public/nashville-concrete-solutions-logo.png` for the header/nav via
+  `src/components/layout/Logo.tsx`) — the favicon/apple-touch-icon/OG image
+  still use a generated "N" monogram (the full logo is illegible at 16–32px),
+  now recolored to the navy palette. Swap those to the real logo artwork if
+  you'd rather have brand-exact favicons.
 - **Fonts** (`src/app/layout.tsx`) use Bitter (slab serif, headings) + Source
   Sans 3 (body) for a warmer, more timeless feel than a generic modern
   sans-serif — reference sites named in chat (sanantonioconcretecontractors.com,

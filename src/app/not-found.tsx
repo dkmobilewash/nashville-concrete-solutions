@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <div className="mx-auto flex max-w-3xl flex-col items-center px-4 py-24 text-center sm:px-6 lg:px-8">
-      <p className="text-sm font-semibold uppercase tracking-wide text-brand-orange">404 Error</p>
-      <h1 className="mt-4 text-4xl font-extrabold text-brand-charcoal md:text-5xl">
+      <p className="text-sm font-semibold uppercase tracking-wide text-brand-accent">404 Error</p>
+      <h1 className="mt-4 text-4xl font-extrabold text-brand-navy md:text-5xl">
         We couldn&apos;t find that page
       </h1>
       <p className="mt-6 text-lg leading-relaxed text-brand-gray">
@@ -37,7 +37,7 @@ export default function NotFound() {
             <li key={service.slug}>
               <Link
                 href={`/services/${service.slug}`}
-                className="font-semibold text-brand-orange hover:text-brand-orange-dark"
+                className="font-semibold text-brand-accent hover:text-brand-accent-dark"
               >
                 {service.name}
               </Link>

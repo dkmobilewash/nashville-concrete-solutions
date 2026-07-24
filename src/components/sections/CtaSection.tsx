@@ -12,7 +12,7 @@ export function CtaSection({
   subhead = "Get a straightforward quote from a local Middle Tennessee concrete crew.",
 }: CtaSectionProps) {
   return (
-    <section className="bg-brand-orange">
+    <section className="bg-brand-accent">
       <div className="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-white">{headline}</h2>
         <p className="mx-auto mt-3 max-w-2xl text-base text-white/90">{subhead}</p>

@@ -19,7 +19,7 @@ export function ServiceAreasSection() {
         ))}
       </div>
       <div className="mt-8 text-center">
-        <Link href="/service-areas" className="font-semibold text-brand-orange hover:text-brand-orange-dark">
+        <Link href="/service-areas" className="font-semibold text-brand-accent hover:text-brand-accent-dark">
           View all service areas
         </Link>
       </div>

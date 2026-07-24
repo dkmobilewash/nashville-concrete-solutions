@@ -65,7 +65,7 @@ export default function CityPage({ params }: CityPageProps) {
       <AreaServiceSchema city={city} />
       <LocalBusinessSchema city={city} />
 
-      <div className="bg-brand-charcoal">
+      <div className="bg-brand-navy">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <BreadcrumbNav items={breadcrumbItems} variant="dark" />
         </div>
@@ -83,7 +83,7 @@ export default function CityPage({ params }: CityPageProps) {
                 <h2 className="text-sm font-semibold uppercase tracking-wide text-brand-gray">
                   Near
                 </h2>
-                <p className="mt-1 text-base text-brand-charcoal">{city.landmarks.join(", ")}</p>
+                <p className="mt-1 text-base text-brand-navy">{city.landmarks.join(", ")}</p>
               </div>
             )}
             {city.neighborhoods.length > 0 && (
@@ -91,13 +91,13 @@ export default function CityPage({ params }: CityPageProps) {
                 <h2 className="text-sm font-semibold uppercase tracking-wide text-brand-gray">
                   Areas We Serve in {city.name}
                 </h2>
-                <p className="mt-1 text-base text-brand-charcoal">{city.neighborhoods.join(", ")}</p>
+                <p className="mt-1 text-base text-brand-navy">{city.neighborhoods.join(", ")}</p>
               </div>
             )}
           </div>
         )}
 
-        <h2 className="mt-12 text-3xl font-bold text-brand-charcoal">
+        <h2 className="mt-12 text-3xl font-bold text-brand-navy">
           Services Offered in {city.name}
         </h2>
         <ul className="mt-6 flex flex-wrap gap-3">
@@ -105,7 +105,7 @@ export default function CityPage({ params }: CityPageProps) {
             <li key={service.slug}>
               <Link
                 href={`/${service.slug}/${city.slug}`}
-                className="inline-block rounded-md border border-brand-gray-mid px-4 py-2 text-sm font-semibold text-brand-charcoal hover:border-brand-orange hover:text-brand-orange"
+                className="inline-block rounded-md border border-brand-gray-mid px-4 py-2 text-sm font-semibold text-brand-navy hover:border-brand-accent hover:text-brand-accent"
               >
                 {service.name}
               </Link>
@@ -119,13 +119,13 @@ export default function CityPage({ params }: CityPageProps) {
 
         {nearbyCities.length > 0 && (
           <div className="mt-12">
-            <h2 className="text-3xl font-bold text-brand-charcoal">Nearby Service Areas</h2>
+            <h2 className="text-3xl font-bold text-brand-navy">Nearby Service Areas</h2>
             <ul className="mt-6 flex flex-wrap gap-3">
               {nearbyCities.map((nearby) => (
                 <li key={nearby.slug}>
                   <Link
                     href={`/service-areas/${nearby.slug}`}
-                    className="inline-block rounded-md border border-brand-gray-mid px-4 py-2 text-sm font-semibold text-brand-charcoal hover:border-brand-orange hover:text-brand-orange"
+                    className="inline-block rounded-md border border-brand-gray-mid px-4 py-2 text-sm font-semibold text-brand-navy hover:border-brand-accent hover:text-brand-accent"
                   >
                     {nearby.name}, {site.address.stateCode}
                   </Link>

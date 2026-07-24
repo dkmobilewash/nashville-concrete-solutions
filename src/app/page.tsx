@@ -57,15 +57,15 @@ export default function HomePage() {
           {topCity && (
             <>
               We&apos;re a regular presence in{" "}
-              <Link href={`/service-areas/${topCity.slug}`} className="font-semibold text-brand-orange hover:text-brand-orange-dark">
+              <Link href={`/service-areas/${topCity.slug}`} className="font-semibold text-brand-accent hover:text-brand-accent-dark">
                 {topCity.name}
               </Link>{" "}
               and throughout the region — see our{" "}
-              <Link href="/service-areas" className="font-semibold text-brand-orange hover:text-brand-orange-dark">
+              <Link href="/service-areas" className="font-semibold text-brand-accent hover:text-brand-accent-dark">
                 full service area
               </Link>{" "}
               or browse our{" "}
-              <Link href="/services" className="font-semibold text-brand-orange hover:text-brand-orange-dark">
+              <Link href="/services" className="font-semibold text-brand-accent hover:text-brand-accent-dark">
                 services
               </Link>{" "}
               to get started.
@@ -76,7 +76,7 @@ export default function HomePage() {
 
       <section className="bg-brand-gray-light py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-brand-charcoal">Our Services</h2>
+          <h2 className="text-3xl font-bold text-brand-navy">Our Services</h2>
           <div className="mt-8">
             <ServicesGrid />
           </div>
@@ -85,7 +85,7 @@ export default function HomePage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-brand-charcoal">Why Choose Us</h2>
+          <h2 className="text-3xl font-bold text-brand-navy">Why Choose Us</h2>
           <div className="mt-8">
             <WhyChooseUs />
           </div>
@@ -94,7 +94,7 @@ export default function HomePage() {
 
       <section className="bg-brand-gray-light py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-brand-charcoal">Where We Work</h2>
+          <h2 className="text-3xl font-bold text-brand-navy">Where We Work</h2>
           <div className="mt-8">
             <ServiceAreasSection />
           </div>
@@ -103,7 +103,7 @@ export default function HomePage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-brand-charcoal">What Customers Say</h2>
+          <h2 className="text-3xl font-bold text-brand-navy">What Customers Say</h2>
           <div className="mt-8">
             <TestimonialsSection />
           </div>

@@ -6,6 +6,7 @@ import { X, Phone } from "lucide-react";
 import { site } from "@/data/site";
 import { services } from "@/data/services";
 import { cities } from "@/data/cities";
+import { Logo } from "./Logo";
 
 interface MobileNavProps {
   open: boolean;
@@ -13,7 +14,7 @@ interface MobileNavProps {
 }
 
 const sectionHeadingClass = "mb-2 text-xs font-semibold uppercase tracking-wide text-brand-gray-mid";
-const linkClass = "block rounded px-2 py-2 text-brand-gray-mid hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-orange";
+const linkClass = "block rounded px-2 py-2 text-brand-gray-mid hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-accent";
 
 export function MobileNav({ open, onClose }: MobileNavProps) {
   useEffect(() => {
@@ -35,11 +36,9 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-[60] overflow-y-auto bg-brand-charcoal lg:hidden">
+    <div className="fixed inset-0 z-[60] overflow-y-auto bg-brand-navy lg:hidden">
       <div className="flex items-center justify-between px-4 py-4">
-        <Link href="/" onClick={onClose} className="font-display text-lg font-bold text-white">
-          {site.name}
-        </Link>
+        <Logo className="h-10" onClick={onClose} />
         <button
           type="button"
           onClick={onClose}
@@ -53,7 +52,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
       <nav aria-label="Mobile" className="space-y-6 px-4 pb-10">
         <a
           href={`tel:${site.phoneHref}`}
-          className="flex min-h-[44px] items-center justify-center gap-2 rounded-md bg-brand-orange px-4 py-3 font-semibold text-white"
+          className="flex min-h-[44px] items-center justify-center gap-2 rounded-md bg-brand-accent px-4 py-3 font-semibold text-white"
         >
           <Phone className="h-4 w-4" aria-hidden="true" />
           {site.phone}
@@ -76,7 +75,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
                 {service.name}
               </Link>
             ))}
-            <Link href="/services" onClick={onClose} className={`${linkClass} font-semibold text-brand-orange`}>
+            <Link href="/services" onClick={onClose} className={`${linkClass} font-semibold text-brand-accent`}>
               View all services
             </Link>
           </div>
@@ -90,7 +89,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
                 {city.name}, {site.address.stateCode}
               </Link>
             ))}
-            <Link href="/service-areas" onClick={onClose} className={`${linkClass} font-semibold text-brand-orange`}>
+            <Link href="/service-areas" onClick={onClose} className={`${linkClass} font-semibold text-brand-accent`}>
               View all areas
             </Link>
           </div>

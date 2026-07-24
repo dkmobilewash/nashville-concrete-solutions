@@ -46,7 +46,7 @@ export default function ServicePage({ params }: ServicePageProps) {
       <BreadcrumbSchema items={breadcrumbItems} />
       <ServiceSchema service={service} />
 
-      <div className="bg-brand-charcoal">
+      <div className="bg-brand-navy">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <BreadcrumbNav items={breadcrumbItems} variant="dark" />
         </div>
@@ -63,25 +63,25 @@ export default function ServicePage({ params }: ServicePageProps) {
           ))}
         </div>
 
-        <h2 className="mt-12 text-3xl font-bold text-brand-charcoal">What You Get</h2>
+        <h2 className="mt-12 text-3xl font-bold text-brand-navy">What You Get</h2>
         <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {service.benefits.map((benefit) => (
             <div key={benefit.title} className="rounded-lg border border-brand-gray-mid bg-white p-6">
-              <h3 className="text-lg font-semibold text-brand-charcoal">{benefit.title}</h3>
+              <h3 className="text-lg font-semibold text-brand-navy">{benefit.title}</h3>
               <p className="mt-2 text-base leading-relaxed text-brand-gray">{benefit.desc}</p>
             </div>
           ))}
         </div>
 
-        <h2 className="mt-12 text-3xl font-bold text-brand-charcoal">Our Process</h2>
+        <h2 className="mt-12 text-3xl font-bold text-brand-navy">Our Process</h2>
         <ol className="mt-6 space-y-6">
           {service.process.map((step, index) => (
             <li key={step.title} className="flex gap-4">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-orange font-bold text-white">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-accent font-bold text-white">
                 {index + 1}
               </span>
               <div>
-                <h3 className="text-lg font-semibold text-brand-charcoal">{step.title}</h3>
+                <h3 className="text-lg font-semibold text-brand-navy">{step.title}</h3>
                 <p className="mt-1 text-base leading-relaxed text-brand-gray">{step.detail}</p>
               </div>
             </li>
@@ -90,7 +90,7 @@ export default function ServicePage({ params }: ServicePageProps) {
 
         {cities.length > 0 && (
           <div className="mt-12">
-            <h2 className="text-3xl font-bold text-brand-charcoal">
+            <h2 className="text-3xl font-bold text-brand-navy">
               {service.name} Near You
             </h2>
             <ul className="mt-6 flex flex-wrap gap-3">
@@ -98,7 +98,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                 <li key={city.slug}>
                   <Link
                     href={`/${service.slug}/${city.slug}`}
-                    className="inline-block rounded-md border border-brand-gray-mid px-4 py-2 text-sm font-semibold text-brand-charcoal hover:border-brand-orange hover:text-brand-orange"
+                    className="inline-block rounded-md border border-brand-gray-mid px-4 py-2 text-sm font-semibold text-brand-navy hover:border-brand-accent hover:text-brand-accent"
                   >
                     {service.shortName} in {city.name}, {site.address.stateCode}
                   </Link>

@@ -27,13 +27,13 @@ export default function ContactPage() {
       <BreadcrumbSchema items={breadcrumbItems} />
       <LocalBusinessSchema />
 
-      <div className="bg-brand-charcoal">
+      <div className="bg-brand-navy">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <BreadcrumbNav items={breadcrumbItems} variant="dark" />
         </div>
       </div>
 
-      <section className="bg-brand-charcoal pb-16">
+      <section className="bg-brand-navy pb-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-extrabold text-white md:text-5xl">Contact Us</h1>
           <p className="mt-4 max-w-2xl text-lg text-brand-gray-mid">
@@ -52,28 +52,28 @@ export default function ContactPage() {
           <div className="space-y-6">
             <div className="rounded-lg border border-brand-gray-mid bg-white p-6">
               <div className="flex items-start gap-3">
-                <Phone className="mt-1 h-5 w-5 text-brand-orange" aria-hidden="true" />
+                <Phone className="mt-1 h-5 w-5 text-brand-accent" aria-hidden="true" />
                 <div>
-                  <p className="font-semibold text-brand-charcoal">Phone</p>
-                  <a href={`tel:${site.phoneHref}`} className="text-brand-gray hover:text-brand-orange">
+                  <p className="font-semibold text-brand-navy">Phone</p>
+                  <a href={`tel:${site.phoneHref}`} className="text-brand-gray hover:text-brand-accent">
                     {site.phone}
                   </a>
                 </div>
               </div>
               <div className="mt-4 flex items-start gap-3">
-                <Mail className="mt-1 h-5 w-5 text-brand-orange" aria-hidden="true" />
+                <Mail className="mt-1 h-5 w-5 text-brand-accent" aria-hidden="true" />
                 <div>
-                  <p className="font-semibold text-brand-charcoal">Email</p>
-                  <a href={`mailto:${site.email}`} className="text-brand-gray hover:text-brand-orange">
+                  <p className="font-semibold text-brand-navy">Email</p>
+                  <a href={`mailto:${site.email}`} className="text-brand-gray hover:text-brand-accent">
                     {site.email}
                   </a>
                 </div>
               </div>
               {site.hours && (
                 <div className="mt-4 flex items-start gap-3">
-                  <Clock className="mt-1 h-5 w-5 text-brand-orange" aria-hidden="true" />
+                  <Clock className="mt-1 h-5 w-5 text-brand-accent" aria-hidden="true" />
                   <div>
-                    <p className="font-semibold text-brand-charcoal">Hours</p>
+                    <p className="font-semibold text-brand-navy">Hours</p>
                     {site.hours.map((rule) => (
                       <p key={rule.days.join()} className="text-brand-gray">
                         {formatHoursRule(rule)}
@@ -83,9 +83,9 @@ export default function ContactPage() {
                 </div>
               )}
               <div className="mt-4 flex items-start gap-3">
-                <MapPin className="mt-1 h-5 w-5 text-brand-orange" aria-hidden="true" />
+                <MapPin className="mt-1 h-5 w-5 text-brand-accent" aria-hidden="true" />
                 <div>
-                  <p className="font-semibold text-brand-charcoal">Service Area</p>
+                  <p className="font-semibold text-brand-navy">Service Area</p>
                   <p className="text-brand-gray">{site.serviceAreaNames.join(", ")}</p>
                 </div>
               </div>

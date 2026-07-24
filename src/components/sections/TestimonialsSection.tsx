@@ -27,7 +27,7 @@ const sampleTestimonials: Testimonial[] = [
 export function TestimonialsSection() {
   return (
     <div>
-      <p className="mb-4 text-xs font-semibold uppercase tracking-wide text-brand-orange">
+      <p className="mb-4 text-xs font-semibold uppercase tracking-wide text-brand-accent">
         Placeholder content — pending real customer reviews
       </p>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

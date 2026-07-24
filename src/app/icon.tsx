@@ -21,7 +21,7 @@ export default function Icon({ id }: { id: string }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#1C1F24",
+          backgroundColor: "#012451",
           borderRadius: size * 0.18,
         }}
       >
@@ -29,7 +29,7 @@ export default function Icon({ id }: { id: string }) {
           style={{
             fontSize: size * 0.6,
             fontWeight: 800,
-            color: "#EA580C",
+            color: "#FFFFFF",
             display: "flex",
           }}
         >

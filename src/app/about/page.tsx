@@ -30,14 +30,14 @@ export default function AboutPage() {
   return (
     <>
       <BreadcrumbSchema items={breadcrumbItems} />
-      <div className="bg-brand-charcoal">
+      <div className="bg-brand-navy">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <BreadcrumbNav items={breadcrumbItems} variant="dark" />
         </div>
       </div>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-extrabold text-brand-charcoal md:text-5xl">
+        <h1 className="text-4xl font-extrabold text-brand-navy md:text-5xl">
           About {site.name}
         </h1>
         <div className="mt-6 max-w-3xl space-y-4">
@@ -51,24 +51,24 @@ export default function AboutPage() {
           <p className="text-lg leading-relaxed text-brand-gray">{site.regionalContextNotes}</p>
         </div>
 
-        <h2 className="mt-12 text-3xl font-bold text-brand-charcoal">What We Value</h2>
+        <h2 className="mt-12 text-3xl font-bold text-brand-navy">What We Value</h2>
         <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {values.map((value) => (
             <div key={value.title} className="rounded-lg border border-brand-gray-mid bg-white p-6">
-              <h3 className="text-lg font-semibold text-brand-charcoal">{value.title}</h3>
+              <h3 className="text-lg font-semibold text-brand-navy">{value.title}</h3>
               <p className="mt-2 text-base leading-relaxed text-brand-gray">{value.desc}</p>
             </div>
           ))}
         </div>
 
-        <h2 className="mt-12 text-3xl font-bold text-brand-charcoal">Where We Work</h2>
+        <h2 className="mt-12 text-3xl font-bold text-brand-navy">Where We Work</h2>
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-brand-gray">
           We serve {site.serviceAreaNames.join(", ")}, {site.address.stateCode}. See our{" "}
-          <Link href="/service-areas" className="font-semibold text-brand-orange hover:text-brand-orange-dark">
+          <Link href="/service-areas" className="font-semibold text-brand-accent hover:text-brand-accent-dark">
             full list of service areas
           </Link>{" "}
           for details on each community, or{" "}
-          <Link href="/contact" className="font-semibold text-brand-orange hover:text-brand-orange-dark">
+          <Link href="/contact" className="font-semibold text-brand-accent hover:text-brand-accent-dark">
             contact us
           </Link>{" "}
           to confirm coverage at your address.

@@ -41,10 +41,10 @@ export function WhyChooseUs() {
     <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
       {points.map((point) => (
         <div key={point.title} className="flex flex-col items-start">
-          <div className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gray-light text-brand-orange">
+          <div className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gray-light text-brand-accent">
             <Icon name={point.icon} className="h-6 w-6" />
           </div>
-          <h3 className="mt-4 text-lg font-semibold text-brand-charcoal">{point.title}</h3>
+          <h3 className="mt-4 text-lg font-semibold text-brand-navy">{point.title}</h3>
           <p className="mt-2 text-base leading-relaxed text-brand-gray">{point.desc}</p>
         </div>
       ))}

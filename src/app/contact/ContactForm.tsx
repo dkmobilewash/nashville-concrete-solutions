@@ -7,8 +7,8 @@ import { cities } from "@/data/cities";
 type SubmitStatus = "idle" | "submitting" | "success" | "error";
 
 const inputClass =
-  "mt-1 block w-full rounded-md border border-brand-gray-mid px-3 py-2 text-brand-charcoal focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange";
-const labelClass = "block text-sm font-semibold text-brand-charcoal";
+  "mt-1 block w-full rounded-md border border-brand-gray-mid px-3 py-2 text-brand-navy focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent";
+const labelClass = "block text-sm font-semibold text-brand-navy";
 
 export function ContactForm() {
   const [status, setStatus] = useState<SubmitStatus>("idle");
@@ -61,7 +61,7 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-lg border border-brand-orange bg-brand-gray-light p-6 text-brand-charcoal">
+      <div className="rounded-lg border border-brand-accent bg-brand-gray-light p-6 text-brand-navy">
         <p className="font-semibold">Thanks — your message was sent.</p>
         <p className="mt-2 text-sm text-brand-gray">We&apos;ll get back to you shortly.</p>
       </div>
@@ -73,13 +73,13 @@ export function ContactForm() {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className={labelClass}>
-            Name <span className="text-brand-orange">*</span>
+            Name <span className="text-brand-accent">*</span>
           </label>
           <input id="name" name="name" type="text" required className={inputClass} />
         </div>
         <div>
           <label htmlFor="phone" className={labelClass}>
-            Phone <span className="text-brand-orange">*</span>
+            Phone <span className="text-brand-accent">*</span>
           </label>
           <input id="phone" name="phone" type="tel" required className={inputClass} />
         </div>
@@ -141,7 +141,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="inline-flex min-h-[44px] items-center justify-center rounded-md bg-brand-orange px-6 py-3 font-semibold text-white transition-colors hover:bg-brand-orange-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange disabled:opacity-60"
+        className="inline-flex min-h-[44px] items-center justify-center rounded-md bg-brand-accent px-6 py-3 font-semibold text-white transition-colors hover:bg-brand-accent-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent disabled:opacity-60"
       >
         {status === "submitting" ? "Sending..." : "Send Message"}
       </button>

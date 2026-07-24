@@ -15,7 +15,7 @@ export function renderOgImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          backgroundColor: "#1C1F24",
+          backgroundColor: "#012451",
           padding: "80px",
           fontFamily: "system-ui, sans-serif",
         }}
@@ -24,7 +24,7 @@ export function renderOgImage() {
           style={{
             width: "96px",
             height: "10px",
-            backgroundColor: "#EA580C",
+            backgroundColor: "#2268C3",
             marginBottom: "40px",
             display: "flex",
           }}
@@ -44,7 +44,7 @@ export function renderOgImage() {
         <div
           style={{
             fontSize: 32,
-            color: "#D1D5DB",
+            color: "#C3C9D1",
             marginTop: "24px",
             display: "flex",
             maxWidth: "900px",
@@ -55,7 +55,7 @@ export function renderOgImage() {
         <div
           style={{
             fontSize: 28,
-            color: "#EA580C",
+            color: "#FFFFFF",
             marginTop: "48px",
             fontWeight: 700,
             display: "flex",

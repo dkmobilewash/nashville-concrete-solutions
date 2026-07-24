@@ -25,14 +25,14 @@ export default function BlogIndexPage() {
   return (
     <>
       <BreadcrumbSchema items={breadcrumbItems} />
-      <div className="bg-brand-charcoal">
+      <div className="bg-brand-navy">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <BreadcrumbNav items={breadcrumbItems} variant="dark" />
         </div>
       </div>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-extrabold text-brand-charcoal md:text-5xl">Blog</h1>
+        <h1 className="text-4xl font-extrabold text-brand-navy md:text-5xl">Blog</h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-brand-gray">
           Practical concrete guidance for homeowners and businesses across Greater{" "}
           {site.address.city}.
@@ -53,7 +53,7 @@ export default function BlogIndexPage() {
                     day: "numeric",
                   })}
                 </p>
-                <h2 className="mt-2 text-lg font-semibold text-brand-charcoal">
+                <h2 className="mt-2 text-lg font-semibold text-brand-navy">
                   {post.frontmatter.title}
                 </h2>
                 <p className="mt-2 text-base leading-relaxed text-brand-gray">

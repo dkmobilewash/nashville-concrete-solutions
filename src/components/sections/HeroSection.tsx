@@ -18,7 +18,7 @@ export function HeroSection({
   showPhoneCta = true,
 }: HeroSectionProps) {
   return (
-    <section className="bg-brand-charcoal">
+    <section className="bg-brand-navy">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl">
           <h1 className="text-4xl font-extrabold leading-tight text-white md:text-5xl">

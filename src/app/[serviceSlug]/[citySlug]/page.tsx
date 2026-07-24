@@ -79,7 +79,7 @@ export default function ServiceCityPage({ params }: ComboPageProps) {
       <BreadcrumbSchema items={breadcrumbItems} />
       <ServiceSchema service={service} areaServedName={city.name} />
 
-      <div className="bg-brand-charcoal">
+      <div className="bg-brand-navy">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <BreadcrumbNav items={breadcrumbItems} variant="dark" />
         </div>
@@ -93,27 +93,27 @@ export default function ServiceCityPage({ params }: ComboPageProps) {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <p className="max-w-3xl text-lg leading-relaxed text-brand-gray">{intro}</p>
 
-        <h2 className="mt-12 text-3xl font-bold text-brand-charcoal">
+        <h2 className="mt-12 text-3xl font-bold text-brand-navy">
           {service.name} Benefits in {city.name}
         </h2>
         <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {benefits.map((benefit) => (
             <div key={benefit.title} className="rounded-lg border border-brand-gray-mid bg-white p-6">
-              <h3 className="text-lg font-semibold text-brand-charcoal">{benefit.title}</h3>
+              <h3 className="text-lg font-semibold text-brand-navy">{benefit.title}</h3>
               <p className="mt-2 text-base leading-relaxed text-brand-gray">{benefit.desc}</p>
             </div>
           ))}
         </div>
 
-        <h2 className="mt-12 text-3xl font-bold text-brand-charcoal">Our Process</h2>
+        <h2 className="mt-12 text-3xl font-bold text-brand-navy">Our Process</h2>
         <ol className="mt-6 space-y-6">
           {service.process.map((step, index) => (
             <li key={step.title} className="flex gap-4">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-orange font-bold text-white">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-accent font-bold text-white">
                 {index + 1}
               </span>
               <div>
-                <h3 className="text-lg font-semibold text-brand-charcoal">{step.title}</h3>
+                <h3 className="text-lg font-semibold text-brand-navy">{step.title}</h3>
                 <p className="mt-1 text-base leading-relaxed text-brand-gray">{step.detail}</p>
               </div>
             </li>
@@ -127,13 +127,13 @@ export default function ServiceCityPage({ params }: ComboPageProps) {
         <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2">
           {siblingCities.length > 0 && (
             <div>
-              <h2 className="text-xl font-bold text-brand-charcoal">
+              <h2 className="text-xl font-bold text-brand-navy">
                 {service.name} in Other Cities
               </h2>
               <ul className="mt-4 space-y-2">
                 {siblingCities.map((c) => (
                   <li key={c.slug}>
-                    <Link href={`/${service.slug}/${c.slug}`} className="font-semibold text-brand-orange hover:text-brand-orange-dark">
+                    <Link href={`/${service.slug}/${c.slug}`} className="font-semibold text-brand-accent hover:text-brand-accent-dark">
                       {service.name} in {c.name}, {site.address.stateCode}
                     </Link>
                   </li>
@@ -143,13 +143,13 @@ export default function ServiceCityPage({ params }: ComboPageProps) {
           )}
           {siblingServices.length > 0 && (
             <div>
-              <h2 className="text-xl font-bold text-brand-charcoal">
+              <h2 className="text-xl font-bold text-brand-navy">
                 Other Services in {city.name}
               </h2>
               <ul className="mt-4 space-y-2">
                 {siblingServices.map((s) => (
                   <li key={s.slug}>
-                    <Link href={`/${s.slug}/${city.slug}`} className="font-semibold text-brand-orange hover:text-brand-orange-dark">
+                    <Link href={`/${s.slug}/${city.slug}`} className="font-semibold text-brand-accent hover:text-brand-accent-dark">
                       {s.name} in {city.name}, {site.address.stateCode}
                     </Link>
                   </li>

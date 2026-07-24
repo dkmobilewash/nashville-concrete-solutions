@@ -16,8 +16,8 @@ export function BreadcrumbNav({ items, variant = "light" }: BreadcrumbNavProps) 
   const linkClass =
     variant === "dark"
       ? "text-brand-gray-mid hover:text-white"
-      : "text-brand-gray hover:text-brand-charcoal";
-  const activeClass = variant === "dark" ? "text-white" : "text-brand-charcoal";
+      : "text-brand-gray hover:text-brand-navy";
+  const activeClass = variant === "dark" ? "text-white" : "text-brand-navy";
 
   return (
     <nav aria-label="Breadcrumb">

@@ -23,14 +23,14 @@ export default function ServicesHubPage() {
   return (
     <>
       <BreadcrumbSchema items={breadcrumbItems} />
-      <div className="bg-brand-charcoal">
+      <div className="bg-brand-navy">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <BreadcrumbNav items={breadcrumbItems} variant="dark" />
         </div>
       </div>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-extrabold text-brand-charcoal md:text-5xl">
+        <h1 className="text-4xl font-extrabold text-brand-navy md:text-5xl">
           Concrete Services
         </h1>
         <p className="mt-6 max-w-3xl text-lg leading-relaxed text-brand-gray">

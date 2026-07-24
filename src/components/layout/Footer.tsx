@@ -17,7 +17,7 @@ export function Footer() {
   ].filter(Boolean) as string[];
 
   return (
-    <footer className="bg-brand-charcoal text-brand-gray-mid">
+    <footer className="bg-brand-navy text-brand-gray-mid">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div>
           <h2 className="text-lg font-bold text-white">{site.name}</h2>
@@ -75,7 +75,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-brand-charcoal-light">
+      <div className="border-t border-brand-navy-light">
         <div className="mx-auto max-w-7xl px-4 py-6 text-xs sm:px-6 lg:px-8">
           © {year} {site.name}. Serving {site.address.city}, {site.address.stateCode} and the
           surrounding area.

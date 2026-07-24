@@ -11,7 +11,7 @@ export function FaqSection({ faqs, title = "Frequently Asked Questions" }: FaqSe
 
   return (
     <div>
-      <h2 className="text-3xl font-bold text-brand-charcoal">{title}</h2>
+      <h2 className="text-3xl font-bold text-brand-navy">{title}</h2>
       <div className="mt-6">
         <FaqAccordion faqs={faqs} />
       </div>

@@ -61,7 +61,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         slug={post.slug}
       />
 
-      <div className="bg-brand-charcoal">
+      <div className="bg-brand-navy">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <BreadcrumbNav items={breadcrumbItems} variant="dark" />
         </div>
@@ -76,23 +76,23 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           })}{" "}
           &middot; {post.frontmatter.author}
         </p>
-        <h1 className="mt-2 text-4xl font-extrabold text-brand-charcoal md:text-5xl">
+        <h1 className="mt-2 text-4xl font-extrabold text-brand-navy md:text-5xl">
           {post.frontmatter.title}
         </h1>
 
-        <div className="prose prose-lg mt-8 max-w-none prose-headings:font-bold prose-headings:text-brand-charcoal prose-a:text-brand-orange prose-a:font-semibold hover:prose-a:text-brand-orange-dark">
+        <div className="prose prose-lg mt-8 max-w-none prose-headings:font-bold prose-headings:text-brand-navy prose-a:text-brand-accent prose-a:font-semibold hover:prose-a:text-brand-accent-dark">
           <MDXRemote source={post.content} />
         </div>
 
         {relatedServices.length > 0 && (
           <div className="mt-12 rounded-lg border border-brand-gray-mid bg-brand-gray-light p-6">
-            <h2 className="text-lg font-semibold text-brand-charcoal">Related Services</h2>
+            <h2 className="text-lg font-semibold text-brand-navy">Related Services</h2>
             <ul className="mt-4 flex flex-wrap gap-3">
               {relatedServices.map((service) => (
                 <li key={service.slug}>
                   <Link
                     href={`/services/${service.slug}`}
-                    className="inline-block rounded-md border border-brand-gray-mid bg-white px-4 py-2 text-sm font-semibold text-brand-charcoal hover:border-brand-orange hover:text-brand-orange"
+                    className="inline-block rounded-md border border-brand-gray-mid bg-white px-4 py-2 text-sm font-semibold text-brand-navy hover:border-brand-accent hover:text-brand-accent"
                   >
                     {service.name}
                   </Link>
