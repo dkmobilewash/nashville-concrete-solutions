@@ -5,6 +5,7 @@ import { site } from "@/data/site";
 import { BreadcrumbNav } from "@/components/ui/BreadcrumbNav";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
+import { formatHoursRule } from "@/lib/hours";
 import { ContactForm } from "./ContactForm";
 
 const breadcrumbItems = [
@@ -73,7 +74,11 @@ export default function ContactPage() {
                   <Clock className="mt-1 h-5 w-5 text-brand-orange" aria-hidden="true" />
                   <div>
                     <p className="font-semibold text-brand-charcoal">Hours</p>
-                    <p className="text-brand-gray">{site.hours}</p>
+                    {site.hours.map((rule) => (
+                      <p key={rule.days.join()} className="text-brand-gray">
+                        {formatHoursRule(rule)}
+                      </p>
+                    ))}
                   </div>
                 </div>
               )}

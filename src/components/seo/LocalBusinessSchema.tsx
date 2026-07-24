@@ -55,7 +55,16 @@ export function LocalBusinessSchema({ city }: LocalBusinessSchemaProps) {
   }
 
   if (site.hours) {
-    data.openingHours = site.hours;
+    data.openingHoursSpecification = site.hours.map((rule) => ({
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: rule.days,
+      opens: rule.opens,
+      closes: rule.closes,
+    }));
+  }
+
+  if (site.foundedYear) {
+    data.foundingDate = `${site.foundedYear}`;
   }
 
   if (site.aggregateRating) {

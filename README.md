@@ -42,8 +42,6 @@ them (fields are conditionally shown), but should be filled in before launch:
 
 - `geo` — exact latitude/longitude (needed for a fully-precise `GeoCoordinates`
   in LocalBusiness schema)
-- `hours` — business hours
-- `foundedYear`
 - `license` / `insurance` — never fabricate; leave blank until real IDs exist
 - `warranty` — warranty terms
 - `financingPartner`
@@ -58,6 +56,13 @@ Also review before publishing:
 - **Brand colors** (charcoal/orange in `tailwind.config.ts`) were not
   specified in the brief and were chosen as sensible defaults for a concrete
   contractor site — confirm or adjust.
+- **Fonts** (`src/app/layout.tsx`) use Bitter (slab serif, headings) + Source
+  Sans 3 (body) for a warmer, more timeless feel than a generic modern
+  sans-serif — reference sites named in chat (sanantonioconcretecontractors.com,
+  azdesertconcrete.com) were blocked by this environment's network policy, so
+  this pairing is a judgment call rather than a direct match — swap in
+  `src/app/layout.tsx` / `tailwind.config.ts` if you want something closer to
+  those references.
 - **Service list** (`src/data/services.ts`) — 8 standard concrete-contractor
   services were authored based on the business type; confirm these match the
   actual services offered.

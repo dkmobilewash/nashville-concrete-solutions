@@ -2,11 +2,13 @@ import Link from "next/link";
 import { site } from "@/data/site";
 import { services } from "@/data/services";
 import { cities } from "@/data/cities";
+import { formatHours } from "@/lib/hours";
 
 const linkClass = "text-brand-gray-mid hover:text-white transition-colors";
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const hoursText = formatHours(site.hours);
   const trustDetails = [
     site.license && `License: ${site.license}`,
     site.insurance && `Insured: ${site.insurance}`,
@@ -20,7 +22,7 @@ export function Footer() {
         <div>
           <h2 className="text-lg font-bold text-white">{site.name}</h2>
           <p className="mt-2 text-sm">{site.tagline}</p>
-          {site.hours && <p className="mt-4 text-sm">Hours: {site.hours}</p>}
+          {hoursText && <p className="mt-4 text-sm">Hours: {hoursText}</p>}
           <p className="mt-2 text-sm">
             <a href={`tel:${site.phoneHref}`} className={linkClass}>{site.phone}</a>
           </p>

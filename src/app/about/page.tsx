@@ -43,8 +43,10 @@ export default function AboutPage() {
         <div className="mt-6 max-w-3xl space-y-4">
           <p className="text-lg leading-relaxed text-brand-gray">
             {site.name} is a concrete contractor serving homeowners and businesses across Greater{" "}
-            {site.address.city}, {site.address.stateCode}. We handle everything from driveways
-            and patios to slabs, retaining walls, and repair work.
+            {site.address.city}, {site.address.stateCode}
+            {site.foundedYear ? `, at work in the area since ${site.foundedYear}` : ""}. We
+            handle everything from driveways and patios to slabs, retaining walls, and repair
+            work.
           </p>
           <p className="text-lg leading-relaxed text-brand-gray">{site.regionalContextNotes}</p>
         </div>

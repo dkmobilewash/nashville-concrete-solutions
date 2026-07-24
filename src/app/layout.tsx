@@ -1,14 +1,24 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Bitter, Source_Sans_3 } from "next/font/google";
 import Script from "next/script";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { site } from "@/data/site";
 import "./globals.css";
 
-const inter = Inter({
+// Bitter (a slab serif — sturdy, warm, and a nod to the trade) for headings,
+// Source Sans 3 for body copy: a timeless, locally-owned feel rather than a
+// generic modern sans-serif.
+const bitter = Bitter({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-bitter",
+  display: "swap",
+  weight: ["600", "700", "800"],
+});
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  variable: "--font-source-sans",
   display: "swap",
 });
 
@@ -51,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${bitter.variable} ${sourceSans.variable}`}>
       <body className="flex min-h-screen flex-col font-sans antialiased">
         {gaMeasurementId && (
           <>

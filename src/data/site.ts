@@ -2,6 +2,8 @@
 // Fields left blank in the source brief are typed nullable and rendered
 // conditionally throughout the site. Do NOT fabricate values here.
 
+import type { HoursRule } from "@/lib/hours";
+
 export interface SiteAddress {
   street: string | null;
   city: string;
@@ -37,9 +39,7 @@ export interface Site {
   address: SiteAddress;
   /** NEEDS INPUT: exact coordinates not supplied — leave null until confirmed. */
   geo: SiteGeo | null;
-  /** NEEDS INPUT: business hours not supplied. */
-  hours: string | null;
-  /** NEEDS INPUT: founding year not supplied. */
+  hours: HoursRule[] | null;
   foundedYear: number | null;
   /** NEEDS INPUT: license number not supplied — never fabricate. */
   license: string | null;
@@ -74,8 +74,11 @@ export const site: Site = {
     zip: null,
   },
   geo: null,
-  hours: null,
-  foundedYear: null,
+  hours: [
+    { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "18:00" },
+    { days: ["Saturday", "Sunday"], opens: "09:00", closes: "14:00" },
+  ],
+  foundedYear: 2013,
   license: null,
   insurance: null,
   warranty: null,

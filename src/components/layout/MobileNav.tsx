@@ -37,7 +37,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
   return (
     <div className="fixed inset-0 z-[60] overflow-y-auto bg-brand-charcoal lg:hidden">
       <div className="flex items-center justify-between px-4 py-4">
-        <Link href="/" onClick={onClose} className="text-lg font-extrabold text-white">
+        <Link href="/" onClick={onClose} className="font-display text-lg font-bold text-white">
           {site.name}
         </Link>
         <button
