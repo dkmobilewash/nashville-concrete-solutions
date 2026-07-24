@@ -37,5 +37,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entries.push({ url: url(`/blog/${post.slug}`), priority: 0.6 });
   }
 
+  entries.push({ url: url("/privacy"), priority: 0.3 });
+  entries.push({ url: url("/terms"), priority: 0.3 });
+
   return entries;
 }

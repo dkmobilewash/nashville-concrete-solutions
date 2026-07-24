@@ -32,6 +32,11 @@ export function generateMetadata({ params }: BlogPostPageProps): Metadata {
     title: post.frontmatter.title,
     description: post.frontmatter.description,
     canonical: `/blog/${post.slug}`,
+    image: `/blog/${post.slug}/opengraph-image`,
+    type: "article",
+    publishedTime: post.frontmatter.date,
+    modifiedTime: post.frontmatter.updated,
+    authors: [post.frontmatter.author],
   });
 }
 
@@ -59,6 +64,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         dateModified={post.frontmatter.updated}
         author={post.frontmatter.author}
         slug={post.slug}
+        image={`/blog/${post.slug}/opengraph-image`}
       />
 
       <div className="bg-brand-navy">

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bitter, Source_Sans_3 } from "next/font/google";
 import Script from "next/script";
+import ReactDOM from "react-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { site } from "@/data/site";
@@ -41,6 +42,17 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
   },
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
   ...(googleVerification || bingVerification
     ? {
         verification: {
@@ -60,6 +72,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  if (gaMeasurementId) {
+    // Resource hints so the GA connection is warmed up before the script
+    // itself loads — Next.js hoists these into <head> automatically.
+    ReactDOM.preconnect("https://www.googletagmanager.com");
+    ReactDOM.preconnect("https://www.google-analytics.com");
+  }
+
   return (
     <html lang="en" className={`${bitter.variable} ${sourceSans.variable}`}>
       <body className="flex min-h-screen flex-col font-sans antialiased">

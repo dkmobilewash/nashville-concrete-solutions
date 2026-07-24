@@ -17,6 +17,13 @@ export interface City {
   landmarks: string[];
   neighborhoods: string[];
   intro: string;
+  /**
+   * A genuinely city-specific paragraph on soil/grading/site conditions —
+   * kept distinct from `intro` and never reused verbatim across cities, so
+   * pages that surface it (e.g. the city hub FAQ) don't end up with
+   * identical boilerplate text with only the city name swapped.
+   */
+  localConsiderations: string;
 }
 
 export const cities: City[] = [
@@ -33,6 +40,8 @@ export const cities: City[] = [
     neighborhoods: ["East Nashville", "West Nashville", "The Gulch", "Bellevue"],
     intro:
       "Nashville's mix of older infill lots and newer development means every job starts with a real look at existing grade, drainage, and soil — not a one-size-fits-all quote.",
+    localConsiderations:
+      "Nashville's older, established neighborhoods often sit on lots with decades of settling and mature landscaping, so we pay close attention to existing grade and root systems before pouring. Davidson County's mix of urban infill and clay-heavy soil makes proper base compaction essential.",
   },
   {
     slug: "mount-juliet",
@@ -47,6 +56,8 @@ export const cities: City[] = [
     neighborhoods: ["Providence", "Central Pike corridor"],
     intro:
       "Mount Juliet has grown quickly over the past decade, and a lot of that growth sits on graded clay fill — which makes correct base compaction non-negotiable on new driveways and patios.",
+    localConsiderations:
+      "A lot of Mount Juliet's growth sits on graded fill from recent development, and freshly graded clay soil needs extra compaction time and attention before it's ready for a slab. We factor that into every Wilson County quote.",
   },
   {
     slug: "franklin",
@@ -61,6 +72,8 @@ export const cities: City[] = [
     neighborhoods: ["Cool Springs", "Berry Farms"],
     intro:
       "From historic downtown lots to newer Cool Springs-area construction, Franklin properties vary a lot in soil and grading needs — we scope each job on-site rather than by zip code average.",
+    localConsiderations:
+      "Franklin properties range from century-old lots downtown to newly graded subdivisions near Cool Springs, so soil conditions vary block to block — we assess grading and drainage on-site rather than quoting off a template.",
   },
   {
     slug: "murfreesboro",
@@ -75,6 +88,8 @@ export const cities: City[] = [
     neighborhoods: ["The Gateway", "Blackman"],
     intro:
       "Murfreesboro's rapid residential and commercial growth means a lot of new-construction flatwork alongside older slabs due for repair — we handle both.",
+    localConsiderations:
+      "Murfreesboro's rapid growth means a lot of concrete work happens on recently disturbed soil, and Rutherford County's clay content holds water longer than sandier soils — that makes drainage planning especially important on new pours.",
   },
   {
     slug: "hendersonville",
@@ -89,6 +104,8 @@ export const cities: City[] = [
     neighborhoods: ["Indian Lake area", "Saundersville"],
     intro:
       "Lakeside properties around Hendersonville often deal with more moisture and drainage complexity — grading and joint placement matter even more on these lots.",
+    localConsiderations:
+      "Hendersonville's lakeside lots near Old Hickory Lake deal with higher ambient moisture than inland properties, so we put extra emphasis on grading slabs away from the house and using a properly compacted base to handle the added moisture exposure.",
   },
   {
     slug: "gallatin",
@@ -103,6 +120,8 @@ export const cities: City[] = [
     neighborhoods: ["Downtown Gallatin"],
     intro:
       "Gallatin's blend of historic in-town lots and newer subdivisions near the lake calls for grading plans tailored to each site rather than a standard template.",
+    localConsiderations:
+      "Gallatin's historic downtown lots and newer construction near the lake call for different approaches — older in-town properties often need drainage correction from decades of settling, while lakeside lots need careful grading to manage moisture.",
   },
   {
     slug: "brentwood",
@@ -117,6 +136,8 @@ export const cities: City[] = [
     neighborhoods: ["Concord Road corridor"],
     intro:
       "Brentwood's larger lots and established landscaping mean access and site protection are as much a part of the job as the pour itself.",
+    localConsiderations:
+      "Brentwood's larger, well-established lots typically have mature trees and irrigation systems nearby, so protecting root systems and existing landscaping during excavation is as much a part of the job as the pour itself.",
   },
   {
     slug: "smyrna",
@@ -131,6 +152,8 @@ export const cities: City[] = [
     neighborhoods: ["Downtown Smyrna"],
     intro:
       "Smyrna's mix of residential neighborhoods and industrial/commercial corridors means we regularly quote both driveway replacements and heavier-duty commercial pads in the same week.",
+    localConsiderations:
+      "Smyrna's mix of residential neighborhoods and industrial corridors near Sam Ridley Parkway means we regularly work with both standard residential base prep and the heavier-duty compaction commercial and industrial-adjacent properties need.",
   },
   {
     slug: "spring-hill",
@@ -145,6 +168,8 @@ export const cities: City[] = [
     neighborhoods: ["Crossroads", "Downtown Spring Hill"],
     intro:
       "Spring Hill is one of the fastest-growing cities in Middle Tennessee, and a lot of that growth is happening on recently graded lots — getting base compaction right up front avoids costly problems later.",
+    localConsiderations:
+      "Spring Hill is one of the fastest-growing cities in the region, and most of that growth is happening on recently graded lots — getting base compaction right before the pour is the single biggest factor in whether a new driveway or patio holds up long-term.",
   },
 ];
 

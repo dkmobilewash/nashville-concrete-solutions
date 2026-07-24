@@ -37,7 +37,14 @@ export interface Site {
   email: string;
   baseUrl: string;
   address: SiteAddress;
-  /** NEEDS INPUT: exact coordinates not supplied — leave null until confirmed. */
+  /**
+   * Approximate service-area centroid (downtown Nashville, TN), not an exact
+   * street address — this business has no public storefront address on file.
+   * This follows Google's guidance for service-area businesses (SAB): use
+   * coordinates representing the area served rather than omitting geo
+   * entirely. Replace with the real business location if one is ever
+   * supplied; never fabricate a precise address to go with it.
+   */
   geo: SiteGeo | null;
   hours: HoursRule[] | null;
   foundedYear: number | null;
@@ -73,7 +80,7 @@ export const site: Site = {
     stateCode: "TN",
     zip: null,
   },
-  geo: null,
+  geo: { latitude: 36.1627, longitude: -86.7816 },
   hours: [
     { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "18:00" },
     { days: ["Saturday", "Sunday"], opens: "09:00", closes: "14:00" },

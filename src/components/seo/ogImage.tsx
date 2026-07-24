@@ -4,8 +4,21 @@ import { site } from "@/data/site";
 export const ogImageSize = { width: 1200, height: 630 };
 export const ogImageContentType = "image/png";
 
-/** Shared generator for app/opengraph-image.tsx and app/twitter-image.tsx. */
-export function renderOgImage() {
+export interface RenderOgImageArgs {
+  /** Large headline. Defaults to the business name (site-wide OG image). */
+  heading?: string;
+  /** Secondary line under the headline. Defaults to the tagline. */
+  subheading?: string;
+  /** Small line at the bottom. Defaults to the phone number. */
+  footer?: string;
+}
+
+/** Shared generator for app/opengraph-image.tsx, app/twitter-image.tsx, and per-post blog OG images. */
+export function renderOgImage({
+  heading = site.name,
+  subheading = site.tagline,
+  footer = site.phone,
+}: RenderOgImageArgs = {}) {
   return new ImageResponse(
     (
       <div
@@ -36,10 +49,10 @@ export function renderOgImage() {
             color: "#FFFFFF",
             lineHeight: 1.1,
             display: "flex",
-            maxWidth: "900px",
+            maxWidth: "1000px",
           }}
         >
-          {site.name}
+          {heading}
         </div>
         <div
           style={{
@@ -47,10 +60,10 @@ export function renderOgImage() {
             color: "#C3C9D1",
             marginTop: "24px",
             display: "flex",
-            maxWidth: "900px",
+            maxWidth: "1000px",
           }}
         >
-          {site.tagline}
+          {subheading}
         </div>
         <div
           style={{
@@ -61,7 +74,7 @@ export function renderOgImage() {
             display: "flex",
           }}
         >
-          {site.phone}
+          {footer}
         </div>
       </div>
     ),

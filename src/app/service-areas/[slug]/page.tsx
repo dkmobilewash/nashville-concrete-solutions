@@ -55,7 +55,7 @@ export default function CityPage({ params }: CityPageProps) {
     },
     {
       question: `What should I know about pouring concrete in ${city.name}?`,
-      answer: site.regionalContextNotes,
+      answer: city.localConsiderations,
     },
   ];
 

@@ -53,7 +53,19 @@ export default function ServiceCityPage({ params }: ComboPageProps) {
     override.intro ??
     `${service.overview[0]} In ${city.name}, ${site.address.stateCode}, that means accounting for ${city.county} conditions${city.landmarks.length ? ` — from lots near ${city.landmarks[0]} to newer builds farther out` : ""}. ${city.intro}`;
 
-  const benefits = override.benefits ?? service.benefits;
+  // When no bespoke override exists, swap the last shared service benefit
+  // for one genuinely derived from this (service, city) pair — otherwise
+  // every city page for a given service would render byte-identical
+  // "Benefits" cards with only the H1/intro differing.
+  const localizedBenefit = {
+    title: `Built for ${city.name}'s ${city.county}`,
+    desc: `We've done ${service.shortName.toLowerCase()} work throughout ${city.name} and know how ${city.county} soil and grading conditions affect the job${
+      city.landmarks.length
+        ? `, whether the lot is near ${city.landmarks[0]} or farther out in newer development`
+        : ""
+    }.`,
+  };
+  const benefits = override.benefits ?? [...service.benefits.slice(0, 3), localizedBenefit];
   const faqs =
     override.faqs && override.faqs.length > 0
       ? override.faqs
