@@ -1,23 +1,19 @@
-// Canonical apex domain — keep in sync with `baseUrl` in src/data/site.ts.
-// next.config.js runs outside the TypeScript build, so it can't import that
-// file directly; both must be updated together if the domain ever changes.
-const CANONICAL_HOST = "nashvilleconcretesolutions.com";
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // NOTE: www <-> apex canonicalization is intentionally NOT handled here.
+  // It previously lived in an app-level redirects() rule, but that
+  // conflicted with the domain-level redirect configured in the Vercel
+  // dashboard (Project -> Settings -> Domains) and produced an
+  // ERR_TOO_MANY_REDIRECTS loop: Vercel redirected apex -> www at the edge,
+  // then this app redirected www -> apex, forever. Vercel's domain redirect
+  // already runs before any Next.js code executes, so it's the correct
+  // (and only) place to canonicalize www/apex. In the dashboard, set one
+  // domain as primary ("Redirect to" the other) and leave it at that.
   async redirects() {
     return [
-      // www -> apex canonicalization: prevents Google indexing both hosts
-      // as separate near-duplicate origins and splitting ranking signal.
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: `www.${CANONICAL_HOST}` }],
-        destination: `https://${CANONICAL_HOST}/:path*`,
-        permanent: true,
-      },
       // Reserved for future renamed/removed routes so old URLs 301 instead
       // of 404ing and losing link equity. Add entries here as slugs change,
-      // e.g. { source: "/old-service-slug", destination: "/services/new-service-slug", permanent: true }.
+      // e.g. { source: "/old-service-slug", destination: "/new-service-slug", permanent: true }.
     ];
   },
   async headers() {
