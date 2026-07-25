@@ -71,11 +71,11 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
           <p className={sectionHeadingClass}>Services</p>
           <div className="space-y-1">
             {services.map((service) => (
-              <Link key={service.slug} href={`/services/${service.slug}`} onClick={onClose} className={linkClass}>
+              <Link key={service.slug} href={`/${service.slug}`} onClick={onClose} className={linkClass}>
                 {service.name}
               </Link>
             ))}
-            <Link href="/services" onClick={onClose} className={`${linkClass} font-semibold text-brand-accent`}>
+            <Link href="/concrete-services" onClick={onClose} className={`${linkClass} font-semibold text-brand-accent`}>
               View all services
             </Link>
           </div>
@@ -85,13 +85,10 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
           <p className={sectionHeadingClass}>Service Areas</p>
           <div className="space-y-1">
             {cities.map((city) => (
-              <Link key={city.slug} href={`/service-areas/${city.slug}`} onClick={onClose} className={linkClass}>
+              <Link key={city.slug} href={`/${city.slug}`} onClick={onClose} className={linkClass}>
                 {city.name}, {site.address.stateCode}
               </Link>
             ))}
-            <Link href="/service-areas" onClick={onClose} className={`${linkClass} font-semibold text-brand-accent`}>
-              View all areas
-            </Link>
           </div>
         </div>
       </nav>

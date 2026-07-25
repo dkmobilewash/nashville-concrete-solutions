@@ -97,7 +97,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               {relatedServices.map((service) => (
                 <li key={service.slug}>
                   <Link
-                    href={`/services/${service.slug}`}
+                    href={`/${service.slug}`}
                     className="inline-block rounded-md border border-brand-gray-mid bg-white px-4 py-2 text-sm font-semibold text-brand-navy hover:border-brand-accent hover:text-brand-accent"
                   >
                     {service.name}

@@ -7,7 +7,7 @@ interface AreaServiceSchemaProps {
 }
 
 export function AreaServiceSchema({ city }: AreaServiceSchemaProps) {
-  const url = `${site.baseUrl}/service-areas/${city.slug}`;
+  const url = `${site.baseUrl}/${city.slug}`;
 
   const data = {
     "@context": "https://schema.org",

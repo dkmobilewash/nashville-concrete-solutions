@@ -25,14 +25,29 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Structure
 
 - `src/data/site.ts` — business profile (single source of truth)
-- `src/data/services.ts` — service catalog (drives `/services/[slug]`)
-- `src/data/cities.ts` — service-area cities (drives `/service-areas/[slug]`)
+- `src/data/services.ts` — service catalog (drives `/[slug]`, e.g. `/driveways`; hub at `/concrete-services`)
+- `src/data/cities.ts` — service-area cities (drives `/[slug]`, e.g. `/nashville`; no separate hub page)
 - `src/data/service-city-content/` — optional bespoke overrides for the
-  `/[serviceSlug]/[citySlug]` local-SEO matrix; falls back to templated
-  content built from `services.ts` + `cities.ts` when empty
+  `/[slug]/[citySlug]` local-SEO matrix (e.g. `/driveways/nashville`);
+  falls back to templated content built from `services.ts` + `cities.ts`
+  when empty
 - `src/content/blog/*.mdx` — blog posts
 - `src/components/seo/` — JSON-LD schema components
 - `src/lib/metadata.ts` — shared `buildMetadata()` helper used by every page
+
+### URL structure
+
+`src/app/[slug]/page.tsx` is a single shared route that renders either a
+service page or a city page depending on which data set the slug matches
+(service and city slugs are guaranteed disjoint — see the two data files
+above). This is what makes both `/driveways` and `/nashville` work as flat,
+one-segment root URLs instead of `/services/driveways` and
+`/service-areas/nashville`. The service×city combo matrix
+(`/driveways/nashville`) lives at `src/app/[slug]/[citySlug]/page.tsx` and
+must keep the same `[slug]` param name as its sibling — Next.js requires
+dynamic segments at the same route position to share a name. There is no
+redirect from the old nested URLs; this repo was restructured before going
+live on a custom domain, so nothing was indexed under the old paths.
 
 ## NEEDS INPUT before launch
 

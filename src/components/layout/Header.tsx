@@ -35,11 +35,11 @@ export function Header() {
             </button>
             <div className="invisible absolute left-0 top-full w-64 rounded-md bg-brand-navy p-2 opacity-0 shadow-lg transition-opacity group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
               {services.map((service) => (
-                <Link key={service.slug} href={`/services/${service.slug}`} className={dropdownLinkClass}>
+                <Link key={service.slug} href={`/${service.slug}`} className={dropdownLinkClass}>
                   {service.name}
                 </Link>
               ))}
-              <Link href="/services" className={`${dropdownLinkClass} font-semibold text-brand-accent`}>
+              <Link href="/concrete-services" className={`${dropdownLinkClass} font-semibold text-brand-accent`}>
                 View all services
               </Link>
             </div>
@@ -56,13 +56,10 @@ export function Header() {
             </button>
             <div className="invisible absolute left-0 top-full max-h-80 w-64 overflow-y-auto rounded-md bg-brand-navy p-2 opacity-0 shadow-lg transition-opacity group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
               {cities.map((city) => (
-                <Link key={city.slug} href={`/service-areas/${city.slug}`} className={dropdownLinkClass}>
+                <Link key={city.slug} href={`/${city.slug}`} className={dropdownLinkClass}>
                   {city.name}, {site.address.stateCode}
                 </Link>
               ))}
-              <Link href="/service-areas" className={`${dropdownLinkClass} font-semibold text-brand-accent`}>
-                View all areas
-              </Link>
             </div>
           </div>
 

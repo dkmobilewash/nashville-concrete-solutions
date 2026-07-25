@@ -25,7 +25,7 @@ export function ServiceSchema({ service, areaServedName }: ServiceSchemaProps) {
     areaServed: areaServedName
       ? { "@type": "City", name: areaServedName }
       : site.serviceAreaNames.map((name) => ({ "@type": "City", name })),
-    url: `${site.baseUrl}/services/${service.slug}`,
+    url: `${site.baseUrl}/${service.slug}`,
     image: new URL(service.image.src, site.baseUrl).toString(),
   };
 

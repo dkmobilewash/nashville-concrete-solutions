@@ -9,7 +9,7 @@ interface CityCardProps {
 export function CityCard({ city }: CityCardProps) {
   return (
     <Link
-      href={`/service-areas/${city.slug}`}
+      href={`/${city.slug}`}
       className="group flex flex-col rounded-lg border border-brand-gray-mid bg-white p-6 shadow-sm transition-shadow hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
     >
       <div className="mb-3 flex items-center gap-2 text-brand-accent">

@@ -36,7 +36,7 @@ export default function NotFound() {
           {services.slice(0, 4).map((service) => (
             <li key={service.slug}>
               <Link
-                href={`/services/${service.slug}`}
+                href={`/${service.slug}`}
                 className="font-semibold text-brand-accent hover:text-brand-accent-dark"
               >
                 {service.name}

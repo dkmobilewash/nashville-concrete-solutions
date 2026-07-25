@@ -8,14 +8,14 @@ import { CtaSection } from "@/components/sections/CtaSection";
 
 const breadcrumbItems = [
   { name: "Home", href: "/" },
-  { name: "Services", href: "/services" },
+  { name: "Concrete Services", href: "/concrete-services" },
 ];
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
     title: "Concrete Services",
     description: `Concrete driveways, patios, stamped concrete, slabs, repair, retaining walls, and more from ${site.name}, serving Greater ${site.address.city}, ${site.address.stateCode}.`,
-    canonical: "/services",
+    canonical: "/concrete-services",
   });
 }
 

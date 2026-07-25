@@ -59,15 +59,11 @@ export default function HomePage() {
           {topCity && (
             <>
               We&apos;re a regular presence in{" "}
-              <Link href={`/service-areas/${topCity.slug}`} className="font-semibold text-brand-accent hover:text-brand-accent-dark">
+              <Link href={`/${topCity.slug}`} className="font-semibold text-brand-accent hover:text-brand-accent-dark">
                 {topCity.name}
               </Link>{" "}
-              and throughout the region — see our{" "}
-              <Link href="/service-areas" className="font-semibold text-brand-accent hover:text-brand-accent-dark">
-                full service area
-              </Link>{" "}
-              or browse our{" "}
-              <Link href="/services" className="font-semibold text-brand-accent hover:text-brand-accent-dark">
+              and throughout the region — browse our{" "}
+              <Link href="/concrete-services" className="font-semibold text-brand-accent hover:text-brand-accent-dark">
                 services
               </Link>{" "}
               to get started.

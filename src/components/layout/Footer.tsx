@@ -43,7 +43,7 @@ export function Footer() {
           <ul className="mt-4 space-y-2 text-sm">
             {services.map((service) => (
               <li key={service.slug}>
-                <Link href={`/services/${service.slug}`} className={linkClass}>
+                <Link href={`/${service.slug}`} className={linkClass}>
                   {service.name}
                 </Link>
               </li>
@@ -56,7 +56,7 @@ export function Footer() {
           <ul className="mt-4 space-y-2 text-sm">
             {cities.map((city) => (
               <li key={city.slug}>
-                <Link href={`/service-areas/${city.slug}`} className={linkClass}>
+                <Link href={`/${city.slug}`} className={linkClass}>
                   {city.name}, {site.address.stateCode}
                 </Link>
               </li>
@@ -70,7 +70,7 @@ export function Footer() {
             <li><Link href="/contact" className={linkClass}>Get a free quote</Link></li>
             <li><Link href="/about" className={linkClass}>About us</Link></li>
             <li><Link href="/blog" className={linkClass}>Blog</Link></li>
-            <li><Link href="/service-areas" className={linkClass}>All service areas</Link></li>
+            <li><Link href="/concrete-services" className={linkClass}>All services</Link></li>
           </ul>
         </div>
       </div>

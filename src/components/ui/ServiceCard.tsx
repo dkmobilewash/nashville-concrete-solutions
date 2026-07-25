@@ -10,7 +10,7 @@ interface ServiceCardProps {
 export function ServiceCard({ service }: ServiceCardProps) {
   return (
     <Link
-      href={`/services/${service.slug}`}
+      href={`/${service.slug}`}
       className="group flex flex-col rounded-lg border border-brand-gray-mid bg-white p-6 shadow-sm transition-shadow hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
     >
       <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-brand-gray-light text-brand-accent">

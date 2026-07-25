@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { site } from "@/data/site";
+import { cities } from "@/data/cities";
 import { BreadcrumbNav } from "@/components/ui/BreadcrumbNav";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { HeroSection } from "@/components/sections/HeroSection";
@@ -68,16 +69,25 @@ export default function AboutPage() {
 
         <h2 className="mt-12 text-3xl font-bold text-brand-navy">Where We Work</h2>
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-brand-gray">
-          We serve {site.serviceAreaNames.join(", ")}, {site.address.stateCode}. See our{" "}
-          <Link href="/service-areas" className="font-semibold text-brand-accent hover:text-brand-accent-dark">
-            full list of service areas
-          </Link>{" "}
-          for details on each community, or{" "}
+          We serve {site.address.city} and the surrounding communities, {site.address.stateCode}.
+          Select your city below for local details, or{" "}
           <Link href="/contact" className="font-semibold text-brand-accent hover:text-brand-accent-dark">
             contact us
           </Link>{" "}
           to confirm coverage at your address.
         </p>
+        <ul className="mt-4 flex flex-wrap gap-3">
+          {cities.map((city) => (
+            <li key={city.slug}>
+              <Link
+                href={`/${city.slug}`}
+                className="inline-block rounded-md border border-brand-gray-mid px-4 py-2 text-sm font-semibold text-brand-navy hover:border-brand-accent hover:text-brand-accent"
+              >
+                {city.name}, {site.address.stateCode}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <CtaSection />

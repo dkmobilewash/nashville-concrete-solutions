@@ -14,23 +14,23 @@ import { FaqSection } from "@/components/sections/FaqSection";
 import { CtaSection } from "@/components/sections/CtaSection";
 
 interface ComboPageProps {
-  params: { serviceSlug: string; citySlug: string };
+  params: { slug: string; citySlug: string };
 }
 
 export function generateStaticParams() {
   return services.flatMap((service) =>
-    cities.map((city) => ({ serviceSlug: service.slug, citySlug: city.slug }))
+    cities.map((city) => ({ slug: service.slug, citySlug: city.slug }))
   );
 }
 
 export function generateMetadata({ params }: ComboPageProps): Metadata {
-  const service = getServiceBySlug(params.serviceSlug);
+  const service = getServiceBySlug(params.slug);
   const city = getCityBySlug(params.citySlug);
   if (!service || !city) {
     return buildMetadata({
       title: "Page Not Found",
       description: "",
-      canonical: `/${params.serviceSlug}/${params.citySlug}`,
+      canonical: `/${params.slug}/${params.citySlug}`,
       noindex: true,
     });
   }
@@ -43,7 +43,7 @@ export function generateMetadata({ params }: ComboPageProps): Metadata {
 }
 
 export default function ServiceCityPage({ params }: ComboPageProps) {
-  const service = getServiceBySlug(params.serviceSlug);
+  const service = getServiceBySlug(params.slug);
   const city = getCityBySlug(params.citySlug);
   if (!service || !city) notFound();
 
@@ -79,7 +79,7 @@ export default function ServiceCityPage({ params }: ComboPageProps) {
 
   const breadcrumbItems = [
     { name: "Home", href: "/" },
-    { name: service.name, href: `/services/${service.slug}` },
+    { name: service.name, href: `/${service.slug}` },
     { name: `${city.name}, ${site.address.stateCode}`, href: `/${service.slug}/${city.slug}` },
   ];
 
