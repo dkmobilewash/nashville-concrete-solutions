@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/metadata";
@@ -52,7 +53,12 @@ export default function ServicePage({ params }: ServicePageProps) {
         </div>
       </div>
 
-      <HeroSection headline={service.headline} subhead={service.heroSubhead} />
+      <HeroSection
+        headline={service.headline}
+        subhead={service.heroSubhead}
+        image={service.image.src}
+        imageAlt={service.image.alt}
+      />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="max-w-3xl space-y-4">
@@ -87,6 +93,25 @@ export default function ServicePage({ params }: ServicePageProps) {
             </li>
           ))}
         </ol>
+
+        {service.gallery && service.gallery.length > 0 && (
+          <div className="mt-12">
+            <h2 className="text-3xl font-bold text-brand-navy">Recent Work</h2>
+            <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
+              {[service.image, ...service.gallery].map((photo) => (
+                <div key={photo.src} className="relative aspect-[4/3] overflow-hidden rounded-lg">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="(min-width: 640px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {cities.length > 0 && (
           <div className="mt-12">

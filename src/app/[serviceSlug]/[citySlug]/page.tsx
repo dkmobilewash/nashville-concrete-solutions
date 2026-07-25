@@ -100,6 +100,8 @@ export default function ServiceCityPage({ params }: ComboPageProps) {
       <HeroSection
         headline={`${service.name} in ${city.name}, ${site.address.stateCode}`}
         subhead={service.heroSubhead}
+        image={service.image.src}
+        imageAlt={service.image.alt}
       />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">

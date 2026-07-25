@@ -16,6 +16,11 @@ export interface ServiceFaq {
   answer: string;
 }
 
+export interface ServiceImage {
+  src: string;
+  alt: string;
+}
+
 export interface Service {
   slug: string;
   name: string;
@@ -30,6 +35,10 @@ export interface Service {
   benefits: ServiceBenefit[];
   process: ServiceProcessStep[];
   faqs: ServiceFaq[];
+  /** Hero background photo for this service's page. */
+  image: ServiceImage;
+  /** Additional real job-site photos shown in a "Recent Work" section. */
+  gallery?: ServiceImage[];
 }
 
 export const services: Service[] = [
@@ -65,6 +74,16 @@ export const services: Service[] = [
       { question: "How long before I can drive on a new driveway?", answer: "Concrete is generally safe for foot traffic after 24-48 hours, but we recommend waiting 7 days before driving on it and a full 28 days before parking heavy loads on it." },
       { question: "Can you replace only part of my driveway?", answer: "Yes. We can saw-cut and replace damaged sections while matching the existing grade and joint pattern where practical." },
     ],
+    image: {
+      src: "/nashville-concrete-solutions/concrete-driveway-contractors-nashville-tn.png",
+      alt: "Finished concrete driveway leading up to a home's garage",
+    },
+    gallery: [
+      {
+        src: "/nashville-concrete-solutions/concrete-driveay-contractor-near-me-nashville-tn.png",
+        alt: "Freshly poured concrete driveway with clean control joints",
+      },
+    ],
   },
   {
     slug: "patios",
@@ -98,6 +117,10 @@ export const services: Service[] = [
       { question: "Do patios need to be sealed?", answer: "Sealing isn't required structurally, but it protects color, reduces staining, and is strongly recommended on stamped or colored finishes." },
       { question: "Can a patio be added onto later?", answer: "Yes, with a properly placed control/expansion joint at the tie-in point to manage independent movement between the old and new sections." },
     ],
+    image: {
+      src: "/nashville-concrete-solutions/concrete-patio-contractor-near-me-nashville.png",
+      alt: "Crew finishing a newly poured round concrete patio surrounded by trees",
+    },
   },
   {
     slug: "stamped-concrete",
@@ -131,6 +154,10 @@ export const services: Service[] = [
       { question: "How often does stamped concrete need to be resealed?", answer: "Typically every 2-3 years depending on sun and traffic exposure, to keep color from fading and protect against moisture." },
       { question: "Will the pattern crack over time?", answer: "Like any concrete, stamped slabs are jointed to control cracking. Cracks can still occur but are directed to joint lines when the work is done correctly." },
     ],
+    image: {
+      src: "/nashville-concrete-solutions/stamped-concrete-contractor-nashville-tn.png",
+      alt: "Crew finishing a stamped concrete driveway with stone-pattern texture mats",
+    },
   },
   {
     slug: "sidewalks-walkways",
@@ -163,6 +190,16 @@ export const services: Service[] = [
       { question: "Do I need a permit to replace a public sidewalk?", answer: "Many municipalities require a permit and inspection for right-of-way sidewalk work. We handle this as part of the project when applicable." },
       { question: "How wide should a walkway be?", answer: "A single-file garden path can be as narrow as 24-30 inches; a primary walkway is usually 36-48 inches to allow two people to pass comfortably." },
       { question: "Can you match an existing sidewalk's finish?", answer: "In most cases yes — we can match broom texture and joint spacing to blend a replacement section with the surrounding sidewalk." },
+    ],
+    image: {
+      src: "/nashville-concrete-solutions/concrete-sidewalk-contractor-near-me-nashville-tn.png",
+      alt: "Newly poured concrete public sidewalk curving along a residential street",
+    },
+    gallery: [
+      {
+        src: "/nashville-concrete-solutions/concrete-walkway-installation-nashville-tn.png",
+        alt: "Concrete walkway installation running alongside a home's foundation",
+      },
     ],
   },
   {
@@ -197,6 +234,16 @@ export const services: Service[] = [
       { question: "How thick is a garage slab?", answer: "Most residential garage slabs are 4 inches, increased to 5-6 inches with added reinforcement for heavier vehicles like RVs." },
       { question: "How long does a slab need to cure before building on it?", answer: "Framing can often begin around 5-7 days after pour, but full structural cure takes 28 days — we'll advise based on the specific project." },
     ],
+    image: {
+      src: "/nashville-concrete-solutions/concrete-slab-foundation-nashville-tn.png",
+      alt: "Foundation footings and formwork being prepared for a new concrete slab pour",
+    },
+    gallery: [
+      {
+        src: "/nashville-concrete-solutions/residential-concrete-contractor-near-me-nashville-tn.png",
+        alt: "Freshly poured residential concrete pad beneath a home's deck",
+      },
+    ],
   },
   {
     slug: "concrete-repair",
@@ -230,6 +277,10 @@ export const services: Service[] = [
       { question: "Why is my concrete cracking?", answer: "Common causes in this area include soil movement from clay content, poor original base compaction, and freeze-thaw cycles. We diagnose the cause before recommending a fix." },
       { question: "Is resurfacing as durable as new concrete?", answer: "A quality resurfacing overlay bonds well to a structurally sound base and can last many years, but it isn't a substitute for a slab with structural damage." },
     ],
+    image: {
+      src: "/nashville-concrete-solutions/concrete-repair-contractor-near-me-nashville.png",
+      alt: "Contractor hand-troweling a concrete repair section on a public sidewalk",
+    },
   },
   {
     slug: "retaining-walls",
@@ -263,6 +314,10 @@ export const services: Service[] = [
       { question: "How tall can a retaining wall be without an engineer?", answer: "This varies by local code, but many jurisdictions require engineering above 3-4 feet of exposed height. We'll confirm the requirement for your specific site." },
       { question: "Poured concrete or block retaining wall — which is better?", answer: "Poured walls are stronger for a given thickness and suit taller or heavily loaded walls; segmental block is faster to install and often more budget-friendly for shorter walls." },
     ],
+    image: {
+      src: "/nashville-concrete-solutions/concrete-retaining-wall-contractor-nashville-tn.png",
+      alt: "Crew building a segmental block retaining wall into a sloped, wooded lot",
+    },
   },
   {
     slug: "commercial-concrete",
@@ -296,6 +351,10 @@ export const services: Service[] = [
       { question: "Do you handle ADA-compliant ramps and walkways?", answer: "Yes, we build ramps, slopes, and walkway transitions to current accessibility requirements." },
       { question: "What load capacity does a commercial parking lot need?", answer: "It depends on the vehicle mix — standard parking areas differ from drive lanes carrying delivery trucks. We specify thickness and reinforcement based on actual expected loads." },
     ],
+    image: {
+      src: "/nashville-concrete-solutions/commercial-concrete-contractor-in-nashville-tn.png",
+      alt: "Crew finishing a large commercial concrete pour outside a warehouse building",
+    },
   },
 ];
 

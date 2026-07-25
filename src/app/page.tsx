@@ -48,6 +48,8 @@ export default function HomePage() {
       <HeroSection
         headline={`Concrete Contractor Serving ${site.address.city}, ${site.address.stateCode}`}
         subhead={`Driveways, patios, stamped concrete, and repair work built for Middle Tennessee's clay soil and freeze-thaw swings. Straightforward quotes, no surprises.`}
+        image="/nashville-concrete-solutions/concrete-contractor-near-me-rosebank-nashville.png"
+        imageAlt="Nashville Concrete Solutions crew finishing a concrete pour outside a home"
       />
 
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">

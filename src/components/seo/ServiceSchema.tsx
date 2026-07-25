@@ -26,6 +26,7 @@ export function ServiceSchema({ service, areaServedName }: ServiceSchemaProps) {
       ? { "@type": "City", name: areaServedName }
       : site.serviceAreaNames.map((name) => ({ "@type": "City", name })),
     url: `${site.baseUrl}/services/${service.slug}`,
+    image: new URL(service.image.src, site.baseUrl).toString(),
   };
 
   return <JsonLdScript data={data} />;

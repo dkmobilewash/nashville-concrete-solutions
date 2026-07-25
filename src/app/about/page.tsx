@@ -4,6 +4,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { site } from "@/data/site";
 import { BreadcrumbNav } from "@/components/ui/BreadcrumbNav";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { HeroSection } from "@/components/sections/HeroSection";
 import { CtaSection } from "@/components/sections/CtaSection";
 
 const breadcrumbItems = [
@@ -36,11 +37,15 @@ export default function AboutPage() {
         </div>
       </div>
 
+      <HeroSection
+        headline={`About ${site.name}`}
+        subhead={`Serving homeowners and businesses across Greater ${site.address.city}, ${site.address.stateCode}.`}
+        image="/nashville-concrete-solutions/nashville-concrete-contractor-backyard-patio.png"
+        imageAlt="Nashville Concrete Solutions crew pouring a large backyard concrete slab"
+      />
+
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-extrabold text-brand-navy md:text-5xl">
-          About {site.name}
-        </h1>
-        <div className="mt-6 max-w-3xl space-y-4">
+        <div className="max-w-3xl space-y-4">
           <p className="text-lg leading-relaxed text-brand-gray">
             {site.name} is a concrete contractor serving homeowners and businesses across Greater{" "}
             {site.address.city}, {site.address.stateCode}
